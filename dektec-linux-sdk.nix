@@ -7,7 +7,7 @@ let
   version = "2025.09.0";
 in
 stdenv.mkDerivation {
-  pname = "dektec-linuxsdk";
+  pname = "dektec-linux-sdk";
   inherit version;
 
   src = fetchurl {

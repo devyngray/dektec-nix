@@ -1,8 +1,10 @@
 let
-  pkgs = import <nixpkgs> { };
-
-  dektecLinuxSDK = pkgs.callPackage ./dektec-linuxsdk.nix { };
+  pkgs = import <nixpkgs> {
+    overlays = [
+      (import ./overlay.nix)
+    ];
+  };
 in
 {
-  inherit dektecLinuxSDK;
+  inherit (pkgs) dektec-linux-sdk dektec-dtu-kmod;
 }
