@@ -16,10 +16,6 @@ in
 
     boot.kernelModules = [ "Dtu" ];
 
-    boot.kernelParams = [
-      "pci=noioapicquirk"
-    ];
-
     environment.systemPackages = [ pkgs.dt-info-cl ];
 
     services.udev.extraRules = ''
