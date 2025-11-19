@@ -35,7 +35,12 @@
       packages = forAllSystems (
         { pkgs, ... }:
         {
-          inherit (pkgs) dektec-linux-sdk dt-info-cl dektec-dtu-kmod;
+          inherit (pkgs)
+            dektec-linux-sdk
+            dt-info-cl
+            dt-play
+            dektec-dtu-kmod
+            ;
         }
       );
     };

@@ -3,8 +3,6 @@
   stdenv,
   kernel,
   dektec-linux-sdk,
-  helix,
-  breakpointHook,
 }:
 let
   version = dektec-linux-sdk.version;
@@ -15,10 +13,7 @@ stdenv.mkDerivation {
 
   src = dektec-linux-sdk;
 
-  nativeBuildInputs = kernel.moduleBuildDependencies ++ [
-    helix
-    breakpointHook
-  ];
+  nativeBuildInputs = kernel.moduleBuildDependencies;
 
   KERNELDIR = "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build";
 
