@@ -15,6 +15,8 @@ in
 
     boot.kernelModules = [ "Dtu" ];
 
+    environment.systemPackages = [ pkgs.dt-info-cl ];
+
     # TODO: look into services.udev.extraRules for permissions
   };
 }
