@@ -16,8 +16,18 @@ in
 
     boot.kernelModules = [ "Dtu" ];
 
+    boot.kernelParams = [
+      "pci=noioapicquirk"
+    ];
+
     environment.systemPackages = [ pkgs.dt-info-cl ];
 
-    # TODO: look into services.udev.extraRules for permissions
+    services.udev.extraRules = ''
+      BUS=="usb", SYSFS{manufacturer}=="DEKTEC", NAME="usb/DekTec/%k", MODE="0666"
+      BUS=="usb", SYSFS{manufacturer}=="DekTec", NAME="usb/DekTec/%k", MODE="0666"
+
+      SUBSYSTEMS=="usb", ATTRS{manufacturer}=="DEKTEC", SYMLINK+="usb/DekTec/%k", MODE="0666"
+      SUBSYSTEMS=="usb", ATTRS{manufacturer}=="DekTec", SYMLINK+="usb/DekTec/%k", MODE="0666"
+    '';
   };
 }
