@@ -23,9 +23,9 @@ stdenv.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out
-    cp ./Linux/DtInfoCL64 $out/DtInfoCL
-    chmod +x $out/DtInfoCL
+    mkdir -p $out/bin
+    cp ./Linux/DtInfoCL64 $out/bin/DtInfoCL
+    chmod +x $out/bin/DtInfoCL
 
     runHook postInstall
   '';
