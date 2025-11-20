@@ -16,11 +16,6 @@ in
 
     boot.kernelModules = [ "Dtu" ];
 
-    environment.systemPackages = [
-      pkgs.dt-info-cl
-      pkgs.dt-play
-    ];
-
     services.udev.extraRules = ''
       SUBSYSTEMS=="usb", ATTRS{manufacturer}=="DEKTEC", SYMLINK+="usb/DekTec/%k", MODE="0666"
       SUBSYSTEMS=="usb", ATTRS{manufacturer}=="DekTec", SYMLINK+="usb/DekTec/%k", MODE="0666"

@@ -30,7 +30,11 @@
     {
       overlays.default = import ./overlay.nix;
 
-      nixosModules.dektec-dtu = import ./modules/dektec-dtu.nix;
+      nixosModules = {
+        dektec-dta = import ./modules/dektec-dta.nix;
+        dektec-dtu = import ./modules/dektec-dtu.nix;
+        dektec-userspace = import ./modules/dektec-userspace.nix;
+      };
 
       packages = forAllSystems (
         { pkgs, ... }:
@@ -39,8 +43,8 @@
             dektec-linux-sdk
             dt-info-cl
             dt-play
-            dektec-dtu-kmod
             dektec-dta-kmod
+            dektec-dtu-kmod
             ;
         }
       );
