@@ -5,4 +5,7 @@ final: prev: {
 
   dektec-dtu-kmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dtu-kmod.nix { };
   dektec-dtu-kmod = final.dektec-dtu-kmodFor final.linuxPackages;
+
+  dektec-dta-kmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dta-kmod.nix { };
+  dektec-dta-kmod = final.dektec-dta-kmodFor final.linuxPackages;
 }

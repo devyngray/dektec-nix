@@ -40,6 +40,7 @@
             dt-info-cl
             dt-play
             dektec-dtu-kmod
+            dektec-dta-kmod
             ;
         }
       );
