@@ -43,6 +43,7 @@
             dektec-linux-sdk
             dt-info-cl
             dt-play
+            dt-record
             dektec-dta-kmod
             dektec-dtu-kmod
             ;

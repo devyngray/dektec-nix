@@ -2,6 +2,7 @@ final: prev: {
   dektec-linux-sdk = final.callPackage ./dektec-linux-sdk.nix { };
   dt-info-cl = final.callPackage ./dt-info-cl.nix { };
   dt-play = final.callPackage ./dt-play.nix { };
+  dt-record = final.callPackage ./dt-record.nix { };
 
   dektec-dta-kmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dta-kmod.nix { };
   dektec-dta-kmod = final.dektec-dta-kmodFor final.linuxPackages;
