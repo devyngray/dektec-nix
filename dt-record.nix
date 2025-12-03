@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchzip,
-  dektec-linux-sdk,
+  dektecLinuxSDK,
 }:
 let
   version = "4.16.1";
@@ -20,8 +20,8 @@ stdenv.mkDerivation {
   usePostUnpack = true;
   postUnpack = ''
     mkdir -p ./source/Import/DTAPI
-    cp ${dektec-linux-sdk}/DTAPI/Include/DTAPI.h ./source/Import/DTAPI/
-    cp ${dektec-linux-sdk}/DTAPI/Lib/GCC7.5.0/DTAPI64.o ./source/Import/DTAPI/
+    cp ${dektecLinuxSDK}/DTAPI/Include/DTAPI.h ./source/Import/DTAPI/
+    cp ${dektecLinuxSDK}/DTAPI/Lib/GCC7.5.0/DTAPI64.o ./source/Import/DTAPI/
   '';
 
   installPhase = ''

@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.hardware.dektec-dtu;
-  dektec-dtu-kmod = pkgs.dektec-dtu-kmodFor config.boot.kernelPackages;
+  cfg = config.hardware.dektecDTU;
+  dektecDTUKmod = pkgs.dektecDTUKmodFor config.boot.kernelPackages;
 in
 {
-  options.hardware.dektec-dtu.enable = lib.mkEnableOption "DekTec DTU drivers and userspace";
+  options.hardware.dektecDTU.enable = lib.mkEnableOption "DekTec DTU drivers and userspace";
 
   config = lib.mkIf cfg.enable {
-    boot.extraModulePackages = [ dektec-dtu-kmod ];
+    boot.extraModulePackages = [ dektecDTUKmod ];
 
     boot.kernelModules = [ "Dtu" ];
 

@@ -2,16 +2,16 @@
   lib,
   stdenv,
   kernel,
-  dektec-linux-sdk,
+  dektecLinuxSDK,
 }:
 let
-  version = dektec-linux-sdk.version;
+  version = dektecLinuxSDK.version;
 in
 stdenv.mkDerivation {
   pname = "dektec-dta-kmod";
   inherit version;
 
-  src = dektec-linux-sdk;
+  src = dektecLinuxSDK;
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 

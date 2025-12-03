@@ -31,21 +31,21 @@
       overlays.default = import ./overlay.nix;
 
       nixosModules = {
-        dektec-dta = import ./modules/dektec-dta.nix;
-        dektec-dtu = import ./modules/dektec-dtu.nix;
-        dektec-userspace = import ./modules/dektec-userspace.nix;
+        dektecDTA = import ./modules/dektec-dta.nix;
+        dektecDTU = import ./modules/dektec-dtu.nix;
+        dektecUserspace = import ./modules/dektec-userspace.nix;
       };
 
       packages = forAllSystems (
         { pkgs, ... }:
         {
           inherit (pkgs)
-            dektec-linux-sdk
-            dt-info-cl
-            dt-play
-            dt-record
-            dektec-dta-kmod
-            dektec-dtu-kmod
+            dektecLinuxSDK
+            dtInfoCL
+            dtPlay
+            dtRecord
+            dektecDTAKmod
+            dektecDTUKmod
             ;
         }
       );

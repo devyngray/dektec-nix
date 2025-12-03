@@ -5,15 +5,15 @@
   ...
 }:
 let
-  cfg = config.programs.dektec-userspace;
+  cfg = config.programs.dektecUserspace;
 in
 {
-  options.programs.dektec-userspace.enable = lib.mkEnableOption "DekTec userspace utilities";
+  options.programs.dektecUserspace.enable = lib.mkEnableOption "DekTec userspace utilities";
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.dt-info-cl
-      pkgs.dt-play
+      pkgs.dtInfoCL
+      pkgs.dtPlay
     ];
   };
 }

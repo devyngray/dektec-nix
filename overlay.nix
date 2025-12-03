@@ -1,12 +1,12 @@
 final: prev: {
-  dektec-linux-sdk = final.callPackage ./dektec-linux-sdk.nix { };
-  dt-info-cl = final.callPackage ./dt-info-cl.nix { };
-  dt-play = final.callPackage ./dt-play.nix { };
-  dt-record = final.callPackage ./dt-record.nix { };
+  dektecLinuxSDK = final.callPackage ./dektec-linux-sdk.nix { };
+  dtInfoCL = final.callPackage ./dt-info-cl.nix { };
+  dtPlay = final.callPackage ./dt-play.nix { };
+  dtRecord = final.callPackage ./dt-record.nix { };
 
-  dektec-dta-kmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dta-kmod.nix { };
-  dektec-dta-kmod = final.dektec-dta-kmodFor final.linuxPackages;
+  dektecDTAKmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dta-kmod.nix { };
+  dektecDTAKmod = final.dektecDTAKmodFor final.linuxPackages;
 
-  dektec-dtu-kmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dtu-kmod.nix { };
-  dektec-dtu-kmod = final.dektec-dtu-kmodFor final.linuxPackages;
+  dektecDTUKmodFor = linuxPackages: linuxPackages.callPackage ./dektec-dtu-kmod.nix { };
+  dektecDTUKmod = final.dektecDTUKmodFor final.linuxPackages;
 }

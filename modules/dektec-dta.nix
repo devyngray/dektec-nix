@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.hardware.dektec-dta;
-  dektec-dta-kmod = pkgs.dektec-dta-kmodFor config.boot.kernelPackages;
+  cfg = config.hardware.dektecDTA;
+  dektecDTAKmod = pkgs.dektecDTAKmodFor config.boot.kernelPackages;
 in
 {
-  options.hardware.dektec-dta.enable = lib.mkEnableOption "DekTec DTA kernel module";
+  options.hardware.dektecDTA.enable = lib.mkEnableOption "DekTec DTA kernel module";
 
   config = lib.mkIf cfg.enable {
-    boot.extraModulePackages = [ dektec-dta-kmod ];
+    boot.extraModulePackages = [ dektecDTAKmod ];
 
     boot.kernelModules = [ "Dta" ];
 
